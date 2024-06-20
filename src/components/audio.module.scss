@@ -1,0 +1,71 @@
+.container {
+	width: 445px;
+	height: 286px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10px;
+	background-color: white;
+}
+
+.musicContent {
+	width: 360px;
+}
+
+.details {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 62px;
+	height: 40px;
+
+	> .timer {
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.20000000298023224px;
+		text-align: right;
+		color: rgba(129, 140, 153, 1);
+	}
+}
+
+.cellContent {
+	width: 214px;
+
+	> .track {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0.15000000596046448px;
+		text-align: left;
+		color: black;
+	}
+
+	> .author {
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.20000000298023224px;
+		text-align: left;
+		color: rgba(129, 140, 153, 1);
+	}
+}
+
+.trackPlaying {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 16px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: right;
+	color: black;
+}
+
+@keyframes pulse {
+	50% {
+		opacity: 0.6;
+	}
+}
+.animate-pulse {
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

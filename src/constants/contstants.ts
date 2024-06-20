@@ -1,0 +1,5 @@
+export const song = '/in_the_end.mp3'
+export const track = 'In the End'
+export const author = 'Linkin Park'
+export const image1 = '/vk-music1.png'
+export const image2 = '/vk-music2.png'
