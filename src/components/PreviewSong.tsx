@@ -1,12 +1,11 @@
 import { Icon16MoreVertical } from '@vkontakte/icons'
 import { IconButton, Paragraph, SimpleCell, Title } from '@vkontakte/vkui'
 import { FC, useEffect } from 'react'
-// import { author, image1, song, track } from '../constants/contstants'
+import { author, track } from '../constants/contstants'
 import AudioStore from '../store/AudioStore'
 import styles from './audio.module.scss'
 import song from '/in_the_end.mp3'
 import image1 from '/vk-music1.png'
-import { track, author } from '../constants/contstants'
 
 interface PreviewSongProps {
 	audioRef: React.RefObject<HTMLAudioElement>
