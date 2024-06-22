@@ -1,10 +1,12 @@
 import { Icon16MoreVertical } from '@vkontakte/icons'
 import { IconButton, Paragraph, SimpleCell, Title } from '@vkontakte/vkui'
 import { FC, useEffect } from 'react'
-import { author, image1, song, track } from '../constants/contstants'
-
+// import { author, image1, song, track } from '../constants/contstants'
 import AudioStore from '../store/AudioStore'
 import styles from './audio.module.scss'
+import song from '/in_the_end.mp3'
+import image1 from '/vk-music1.png'
+import { track, author } from '../constants/contstants'
 
 interface PreviewSongProps {
 	audioRef: React.RefObject<HTMLAudioElement>
@@ -36,7 +38,7 @@ export const PreviewSong: FC<PreviewSongProps> = ({ audioRef }) => {
 	return (
 		<SimpleCell
 			onClick={handleClick}
-			before={<img src={image1} alt='song' />}
+			before={<img src={image1 ?? './vk-music/vk-music1.png'} alt='song' />}
 			after={
 				<div className={styles.details}>
 					<Paragraph className={styles.timer}>
@@ -49,7 +51,7 @@ export const PreviewSong: FC<PreviewSongProps> = ({ audioRef }) => {
 			}
 			className={styles.musicContent}
 		>
-			<audio ref={audioRef} src={song} loop />
+			<audio ref={audioRef} src={song ?? './vk-music/in_the_end.mp3'} loop />
 			<div className={styles.cellContent}>
 				<Title level='2' className={styles.track}>
 					{track}

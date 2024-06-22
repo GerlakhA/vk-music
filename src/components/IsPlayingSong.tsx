@@ -1,10 +1,12 @@
 import { Icon16MoreVertical } from '@vkontakte/icons'
 import { Div, IconButton, Paragraph, SimpleCell, Title } from '@vkontakte/vkui'
 import { FC, useEffect, useState } from 'react'
-import { arrowImage, author, image2, track } from '../constants/contstants'
+import { author, track } from '../constants/contstants'
 import AudioStore from '../store/AudioStore'
 import { formatTime } from '../utils/formatTime'
 import styles from './audio.module.scss'
+import arrowImage from '/arrow_vk.png'
+import image2 from '/vk-music2.png'
 
 interface IsPlayingSongProps {
 	audioRef: React.RefObject<HTMLAudioElement>
@@ -38,14 +40,24 @@ export const IsPlayingSong: FC<IsPlayingSongProps> = ({ audioRef }) => {
 					width: 360
 				}}
 			>
-				<img src={arrowImage} alt='arrow' style={{ textAlign: 'left' }} />
+				<img
+					src={arrowImage ?? './vk-music/arrow_vk.png'}
+					alt='arrow'
+					style={{ textAlign: 'left' }}
+				/>
 				<Title level='2' className={styles.trackPlaying}>
 					Трек играет
 				</Title>
 			</Div>
 			<SimpleCell
 				onClick={pause}
-				before={<img src={image2} alt='song' className={styles['animate-pulse']} />}
+				before={
+					<img
+						src={image2 ?? './vk-music/vk-music2.png'}
+						alt='song'
+						className={styles['animate-pulse']}
+					/>
+				}
 				after={
 					<div className={styles.details}>
 						<Paragraph className={styles.timer}>{formatTime(Math.floor(songTime ?? 0))}</Paragraph>
